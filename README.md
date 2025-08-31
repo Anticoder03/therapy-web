@@ -91,11 +91,7 @@ Modify the slider content in `includes/hero-slider.php`:
 - Update button text and links
 - Add or remove slides as needed
 
-### Contact Information
-Modify the contact details in the gradient bar:
-- Address: "No: 21/1, Kellys Road, Chennai-600010"
-- Email: "alignpeakphysio@gmail.com"
-- Phone: "+91 91506 00006"
+
 
 ## Browser Support
 
@@ -125,3 +121,4 @@ Modify the contact details in the gradient bar:
 - The design matches the ALIGN PEAK PHYSIO branding
 - Includes proper accessibility features and hover states
 - The slider uses your existing hero images from the img folder
+
