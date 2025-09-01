@@ -33,7 +33,7 @@ include 'includes/navbar.php';
         <div class="text-base md:text-xl">+91 9566788054, 8939398054, 9894874663</div>
         <div class="text-base md:text-xl">alignpeakphysio@gmail.com</div>
       </div>
-      <form id="mail" class="w-full max-w-xl backdrop-blur-md bg-white/10 p-6 rounded-xl text-white">
+      <form action="insert_contact.php" method="post" id="mail" class="w-full max-w-xl backdrop-blur-md bg-white/10 p-6 rounded-xl text-white">
         <div class="flex flex-col gap-5">
           <input type="text" id="name" name="name" placeholder="Full name" class="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-[20px] placeholder-white" required>
           <div class="flex flex-col md:flex-row gap-3">
@@ -60,31 +60,7 @@ include 'includes/navbar.php';
 <div class="flex justify-center items-center mb-10 bg-white">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23347.975408942686!2d80.23777818345056!3d13.083176691149369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265e0e5000005%3A0x58ad50b8a4f573d!2sAlignPeak%20Physio%20Pvt%20Ltd.%2C%20Align%20Peak%20physiotherapy%20Clinic!5e0!3m2!1sen!2sin!4v1748536578261!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
-<script>
-  document.getElementById("mail").addEventListener('submit',async(e)=>{
-    e.preventDefault();
-    const form = e.target;
-    const data = {
-      name: form.name.value,
-      contact: form.phone.value,
-      city: form.city.value,
-      speciality: form.speciality.value,
-      email: form.email.value,
-      country: form.country.value,
-      message: form.message.value,
-    };
-    const res = await fetch('/message', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    if(res.ok){
-      alert('Form submitted successfully, We will contact you shortly.')
-    } else {
-      alert('Something went wrong please contact alignpeakphysio@gmail.com.')
-    }
-  });
-</script>
+
 <!-- <a class="float" href="https://wa.me/919150600006">
   <img src="/whatsapp.gif" class="whatsapp" alt="whatsapp logo">
 </a> -->

@@ -97,6 +97,31 @@
     </button>
 </section>
 
+<!-- Appointment Modal -->
+<div id="appointmentModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-8 relative">
+    <button id="closeModal" class="absolute top-4 right-4 text-2xl font-bold text-gray-400 hover:text-pink-600">&times;</button>
+    <h2 class="text-3xl font-bold mb-1">BOOK APPOINTMENT</h2>
+    <p class="text-lg text-orange-400 mb-4 font-semibold">Get expert care at your convenience</p>
+    <form action="insert_appointment.php" method="post">
+      <label class="block mb-1 font-medium">Name</label>
+      <input type="text" name="name" class="w-full mb-3 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-pink-600" placeholder="Your full name" />
+
+      <label class="block mb-1 font-medium">Your phone number</label>
+      <input type="text" name="phone" class="w-full mb-3 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-pink-600" placeholder="Your phone number" />
+
+      <label class="block mb-1 font-medium">Your E-mail</label>
+      <input type="email" name="email" class="w-full mb-3 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-pink-600" placeholder="Your E-mail" />
+
+      <label class="block mb-1 font-medium">Choose a Date</label>
+      <input type="date" name="date" class="w-full mb-6 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-pink-600" placeholder="dd-mm-yyyy" />
+
+      <button type="submit" class="w-full bg-pink-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors">Confirm appointment</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 // Hero Slider JavaScript
 document.addEventListener('DOMContentLoaded', function() {
@@ -183,5 +208,25 @@ document.addEventListener('DOMContentLoaded', function() {
             resetInterval();
         }
     });
+});
+
+$(function() {
+  // Show modal on Book Appointment button click
+  $(document).on('click', '.bg-pink-600', function(e) {
+    if ($(this).text().trim() === 'Book Appointment') {
+      e.preventDefault();
+      $('#appointmentModal').removeClass('hidden');
+    }
+  });
+  // Hide modal on close
+  $('#closeModal').on('click', function() {
+    $('#appointmentModal').addClass('hidden');
+  });
+  // Hide modal when clicking outside the modal box
+  $('#appointmentModal').on('click', function(e) {
+    if (e.target === this) {
+      $(this).addClass('hidden');
+    }
+  });
 });
 </script>

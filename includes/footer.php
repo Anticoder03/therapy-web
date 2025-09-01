@@ -55,4 +55,7 @@
       </div>
     </div>
   </div>
+  <center>
+    <p class="text-gray-200 text-sm mt-4">Copyright &copy; 2025 Anticoder03. All rights reserved.</p>
+  </center>
 </footer>
